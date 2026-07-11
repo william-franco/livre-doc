@@ -11,25 +11,33 @@ The project is structured in a modular way, where each new functionality should 
 ## Folder architecture
 
 ```
-src/
+lib/
+├── main.dart
+└── src/
     ├── common/
     │   ├── constants/
     │   ├── dependency_injectors/
-    │   ├── enums/
+    │   ├── design/
     │   ├── extensions/
     │   ├── patterns/
     │   ├── routes/
     │   ├── services/
-    │   ├── state_management/
-    │   └── widgets/
+    │   └── state_management/
     └── features/
-        ├── feature_one/
+        ├── welcome/
         │   ├── models/
         │   ├── repositories/
         │   ├── routes/
         │   ├── view_models/
         │   └── views/
-        └── feature_two/
+        ├── editor/
+        │   ├── models/
+        │   ├── repositories/
+        │   ├── routes/
+        │   ├── services/
+        │   ├── view_models/
+        │   └── views/
+        └── settings/
             ├── models/
             ├── repositories/
             ├── routes/
