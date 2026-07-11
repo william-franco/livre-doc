@@ -1,30 +1,33 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:livre_doc/main.dart';
+import 'package:livre_doc/src/common/dependency_injectors/dependency_injector.dart';
+import 'package:livre_doc/src/features/welcome/view_models/welcome_view_model.dart';
+import 'package:livre_doc/src/features/welcome/views/welcome_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('Welcome screen renders Livre Doc title', (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(1280, 720);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.reset);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    SharedPreferences.setMockInitialValues({});
+    resetDependencies();
+    dependencyInjector();
+    await initDependencies();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: WelcomeView(welcomeViewModel: locator<WelcomeViewModel>()),
+      ),
+    );
+
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Livre Doc'), findsOneWidget);
+    expect(find.text('Recent Documents'), findsOneWidget);
   });
 }
