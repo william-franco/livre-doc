@@ -1,6 +1,6 @@
 # Livre Doc
 
-Under construction.
+Desktop rich-text editor inspired by LibreOffice Writer, built with Flutter MVVM flat architecture.
 
 
 ## Project Structure
