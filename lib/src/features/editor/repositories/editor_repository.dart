@@ -7,11 +7,11 @@ import 'package:livre_doc/src/features/editor/models/document_model.dart';
 import 'package:livre_doc/src/features/editor/repositories/document_repository.dart';
 import 'package:livre_doc/src/features/welcome/models/recent_document.dart';
 
-typedef DocumentResult = Result<DocumentModel, Exception>;
+typedef DocumentResult = ResultPattern<DocumentModel, Exception>;
 
 abstract interface class EditorRepository {
   Future<DocumentResult> openDocument({String? filePath});
-  Future<Result<String, Exception>> saveDocument(DocumentModel document);
+  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document);
   Future<void> shareDocument(DocumentModel document);
   Future<void> exportAsPdf(DocumentModel document);
   Future<void> exportAsDocx(DocumentModel document);
@@ -38,7 +38,7 @@ class EditorRepositoryImpl implements EditorRepository {
       documentRepository.loadDocument(filePath: filePath);
 
   @override
-  Future<Result<String, Exception>> saveDocument(DocumentModel document) =>
+  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document) =>
       documentRepository.saveDocument(document);
 
   @override

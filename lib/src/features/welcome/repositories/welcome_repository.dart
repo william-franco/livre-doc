@@ -5,7 +5,7 @@ import 'package:livre_doc/src/common/patterns/result_pattern.dart';
 import 'package:livre_doc/src/common/services/storage_service.dart';
 import 'package:livre_doc/src/features/welcome/models/recent_document.dart';
 
-typedef WelcomeResult = Result<List<RecentDocument>, Exception>;
+typedef WelcomeResult = ResultPattern<List<RecentDocument>, Exception>;
 
 abstract interface class WelcomeRepository {
   Future<WelcomeResult> readRecentDocuments();
@@ -33,9 +33,9 @@ class WelcomeRepositoryImpl implements WelcomeRepository {
                 RecentDocument.fromJson(jsonDecode(e) as Map<String, dynamic>),
           )
           .toList();
-      return Success(value: docs);
+      return SuccessResult(value: docs);
     } catch (error) {
-      return Error(error: Exception('WelcomeRepository: $error'));
+      return ErrorResult(error: Exception('WelcomeRepository: $error'));
     }
   }
 

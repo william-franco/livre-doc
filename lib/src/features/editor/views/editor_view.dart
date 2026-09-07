@@ -4,7 +4,7 @@ import 'package:flutter_quill/flutter_quill.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:livre_doc/src/common/design/app_theme.dart';
-import 'package:livre_doc/src/common/patterns/app_state_pattern.dart';
+import 'package:livre_doc/src/common/patterns/state_pattern.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';
 import 'package:livre_doc/src/features/editor/models/document_model.dart';
 import 'package:livre_doc/src/features/editor/view_models/editor_view_model.dart';

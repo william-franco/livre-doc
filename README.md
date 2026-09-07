@@ -2,13 +2,28 @@
 
 Desktop rich-text editor inspired by LibreOffice Writer, built with Flutter MVVM flat architecture.
 
+## Stack
 
-## Project Structure
+| Technology | Version |
+|------------|---------|
+| Dart SDK | ^3.13.2 |
+| cupertino_icons | ^1.0.8 |
+| path | ^1.9.1 |
+| path_provider | ^2.1.5 |
+| shared_preferences | ^2.5.5 |
+| share_plus | ^10.1.4 |
+| go_router | ^17.2.1 |
+| get_it | ^9.2.1 |
+| flutter_quill | ^11.4.0 |
+| file_picker | ^8.1.7 |
+| pdf | ^3.13.0 |
+| printing | ^5.15.0 |
+| flutter_quill_to_pdf | ^2.3.9 |
+| flutter_lints | ^6.0.0 |
+
+## Architecture
 
 The project is structured in a modular way, where each new functionality should be a new module containing its particularities, and things common to the entire project should be in the `common` module.
-
-
-## Folder architecture
 
 ```
 src/
@@ -37,7 +52,6 @@ src/
             └── views/
 ```
 
-
 ## Coverage
 
 flutter pub run build_runner build --delete-conflicting-outputs
@@ -47,7 +61,6 @@ flutter test --coverage
 genhtml coverage/lcov.info -o coverage/html
 
 open coverage/html/index.html
-
 
 ## ScreenShots
 
@@ -59,8 +72,7 @@ open coverage/html/index.html
 |----------|----------|----------|
 | ![App Screenshot](assets/screenshots/screen-4.png) | ![App Screenshot](assets/screenshots/screen-5.png) | ![App Screenshot](assets/screenshots/screen-6.png) |
 
-
-## Examples of commits
+## Commits
 
 ```
 git add . && git commit -m ":rocket: Initial commit." && git push
@@ -79,7 +91,6 @@ git add . && git commit -m ":test_tube: Added test functionality xyz." && git pu
 git add . && git commit -m ":construction_worker: Building in progress." && git push
 git add . && git commit -m ":construction_worker: Added CI build system." && git push
 ```
-
 
 ## License
 

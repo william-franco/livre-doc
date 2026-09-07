@@ -8,11 +8,11 @@ import 'package:livre_doc/src/features/editor/models/document_delta_codec.dart';
 import 'package:livre_doc/src/features/editor/models/document_model.dart';
 import 'package:livre_doc/src/features/editor/services/document_export_service.dart';
 
-typedef DocumentResult = Result<DocumentModel, Exception>;
+typedef DocumentResult = ResultPattern<DocumentModel, Exception>;
 
 abstract interface class DocumentRepository {
   Future<DocumentResult> loadDocument({String? filePath});
-  Future<Result<String, Exception>> saveDocument(DocumentModel document);
+  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document);
   Future<void> shareDocument(DocumentModel document);
   Future<void> exportAsPdf(DocumentModel document);
   Future<void> exportAsDocx(DocumentModel document);
@@ -33,7 +33,7 @@ class DocumentRepositoryImpl implements DocumentRepository {
   @override
   Future<DocumentResult> loadDocument({String? filePath}) async {
     try {
-      if (filePath == null) return Success(value: const DocumentModel());
+      if (filePath == null) return SuccessResult(value: const DocumentModel());
 
       final raw = await fileService.readFile(filePath);
       final title = fileService.titleFromPath(filePath);
@@ -43,7 +43,7 @@ class DocumentRepositoryImpl implements DocumentRepository {
               DocumentDeltaCodec.plainTextToDelta(raw),
             );
 
-      return Success(
+      return SuccessResult(
         value: DocumentModel(
           title: title,
           contentDelta: contentDelta,
@@ -51,12 +51,12 @@ class DocumentRepositoryImpl implements DocumentRepository {
         ),
       );
     } catch (error) {
-      return Error(error: Exception('DocumentRepository: $error'));
+      return ErrorResult(error: Exception('DocumentRepository: $error'));
     }
   }
 
   @override
-  Future<Result<String, Exception>> saveDocument(DocumentModel document) async {
+  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document) async {
     try {
       final String path;
       if (document.filePath != null) {
@@ -70,9 +70,9 @@ class DocumentRepositoryImpl implements DocumentRepository {
         filePath: path,
         content: document.contentDelta,
       );
-      return Success(value: path);
+      return SuccessResult(value: path);
     } catch (error) {
-      return Error(error: Exception('DocumentRepository: $error'));
+      return ErrorResult(error: Exception('DocumentRepository: $error'));
     }
   }
 

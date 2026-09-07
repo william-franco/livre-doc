@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:livre_doc/src/common/design/app_theme.dart';
-import 'package:livre_doc/src/common/patterns/app_state_pattern.dart';
+import 'package:livre_doc/src/common/patterns/state_pattern.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';
 import 'package:livre_doc/src/features/editor/routes/editor_routes.dart';
 import 'package:livre_doc/src/features/settings/routes/setting_routes.dart';

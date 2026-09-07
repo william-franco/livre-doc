@@ -1,11 +1,11 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
-import 'package:livre_doc/src/common/patterns/app_state_pattern.dart';
+import 'package:livre_doc/src/common/patterns/state_pattern.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';
 import 'package:livre_doc/src/features/welcome/models/recent_document.dart';
 import 'package:livre_doc/src/features/welcome/repositories/welcome_repository.dart';
 
-typedef WelcomeState = AppState<List<RecentDocument>>;
+typedef WelcomeState = StatePattern<List<RecentDocument>>;
 
 typedef _WelcomeViewModel = StateManagement<WelcomeState>;
 
