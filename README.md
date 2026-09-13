@@ -1,12 +1,31 @@
 # Livre Doc
 
-Desktop rich-text editor inspired by LibreOffice Writer, built with Flutter MVVM flat architecture.
+Desktop rich-text editor inspired by LibreOffice Writer, built with Flutter MVVM.
+
+Supports document editing flows with formatting controls and a flat feature-oriented layout.
+
+View models mediate between the editor UI and document or persistence layers.
+
+Targets desktop form factors with modular routes and shared editor widgets.
+
+Useful for studying large-form desktop Flutter apps without a full office suite scope.
+
+## Structure
+
+```mermaid
+flowchart LR
+  EditorView --> EditorViewModel
+  EditorViewModel --> DocumentRepository
+  DocumentRepository --> DocumentModel
+  EditorViewModel --> FormattingActions
+  DocumentRepository --> LocalFileStore
+```
 
 ## Stack
 
 | Technology | Version |
 |------------|---------|
-| Dart SDK | ^3.13.2 |
+| Dart SDK | ^3.13.3 |
 | cupertino_icons | ^1.0.8 |
 | path | ^1.9.1 |
 | path_provider | ^2.1.5 |
