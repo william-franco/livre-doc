@@ -25,14 +25,14 @@ flowchart LR
 
 | Technology | Version |
 |------------|---------|
-| Dart SDK | ^3.13.4 |
+| Dart SDK | ^3.13.5 |
 | cupertino_icons | ^1.0.8 |
 | path | ^1.9.1 |
 | path_provider | ^2.1.5 |
-| shared_preferences | ^2.5.5 |
+| shared_preferences | ^2.5.6 |
 | share_plus | ^10.1.4 |
-| go_router | ^17.2.1 |
-| get_it | ^9.2.1 |
+| go_router | ^18.0.2 |
+| get_it | ^9.3.0 |
 | flutter_quill | ^11.4.0 |
 | file_picker | ^8.1.7 |
 | pdf | ^3.13.0 |
