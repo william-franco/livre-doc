@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:go_router/go_router.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';
 import 'package:livre_doc/src/features/settings/models/setting_model.dart';
@@ -16,6 +17,19 @@ class SettingView extends StatelessWidget {
       applicationName: 'Livre Doc',
       applicationVersion: 'Version 1.0.0',
       applicationLegalese: '\u{a9} 2026',
+      children: <Widget>[
+        const SizedBox(height: 16),
+        TextButton.icon(
+          icon: const Icon(Icons.code),
+          label: const Text('GitHub'),
+          onPressed: () {
+            launchUrl(
+              Uri.parse('https://github.com/william-franco'),
+              mode: LaunchMode.externalApplication,
+            );
+          },
+        ),
+      ],
     );
   }
 
