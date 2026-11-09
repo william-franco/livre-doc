@@ -16,7 +16,8 @@ abstract interface class WelcomeViewModel extends _WelcomeViewModel {
   Future<String?> pickDocumentFile();
 }
 
-class WelcomeViewModelImpl extends _WelcomeViewModel implements WelcomeViewModel {
+class WelcomeViewModelImpl extends _WelcomeViewModel
+    implements WelcomeViewModel {
   final WelcomeRepository welcomeRepository;
 
   WelcomeViewModelImpl({required this.welcomeRepository});

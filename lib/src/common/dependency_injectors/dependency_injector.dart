@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:livre_doc/src/common/services/file_service.dart';
 import 'package:livre_doc/src/common/services/share_service.dart';
 import 'package:livre_doc/src/common/services/storage_service.dart';
+import 'package:livre_doc/src/common/services/url_launcher_service.dart';
 import 'package:livre_doc/src/features/editor/repositories/document_repository.dart';
 import 'package:livre_doc/src/features/editor/repositories/editor_repository.dart';
 import 'package:livre_doc/src/features/editor/services/document_export_service.dart';
@@ -14,6 +15,9 @@ import 'package:livre_doc/src/features/welcome/view_models/welcome_view_model.da
 final locator = GetIt.instance;
 
 void dependencyInjector() {
+  locator.registerLazySingleton<UrlLauncherService>(
+    () => UrlLauncherServiceImpl(),
+  );
   _registerServices();
   _registerSettings();
   _registerWelcome();
@@ -31,7 +35,10 @@ void _registerServices() {
 
 void _registerSettings() {
   locator.registerCachedFactory<SettingRepository>(
-    () => SettingRepositoryImpl(storageService: locator<StorageService>()),
+    () => SettingRepositoryImpl(
+      storageService: locator<StorageService>(),
+      urlLauncherService: locator<UrlLauncherService>(),
+    ),
   );
   locator.registerLazySingleton<SettingViewModel>(
     () => SettingViewModelImpl(settingRepository: locator<SettingRepository>()),

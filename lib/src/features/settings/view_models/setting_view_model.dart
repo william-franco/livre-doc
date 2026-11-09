@@ -8,17 +8,22 @@ typedef _SettingViewModel = StateManagement<SettingModel>;
 abstract interface class SettingViewModel extends _SettingViewModel {
   Future<void> loadSettings();
   Future<void> changeTheme({required bool isDarkTheme});
+  Future<void> openUrl({required Uri url});
   Future<void> changeFontSize(double fontSize);
   Future<void> changeFontFamily(String fontFamily);
 }
 
-class SettingViewModelImpl extends _SettingViewModel implements SettingViewModel {
+class SettingViewModelImpl extends _SettingViewModel
+    implements SettingViewModel {
   final SettingRepository settingRepository;
 
   SettingViewModelImpl({required this.settingRepository});
-
   @override
   SettingModel build() => SettingModel();
+
+  @override
+  Future<void> openUrl({required Uri url}) =>
+      settingRepository.openUrl(url: url);
 
   @override
   Future<void> loadSettings() async {

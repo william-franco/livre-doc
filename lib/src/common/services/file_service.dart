@@ -89,8 +89,7 @@ class FileServiceImpl implements FileService {
   }
 
   @override
-  String titleFromPath(String filePath) =>
-      p.basenameWithoutExtension(filePath);
+  String titleFromPath(String filePath) => p.basenameWithoutExtension(filePath);
 
   @override
   bool isRichDocument(String filePath) {

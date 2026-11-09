@@ -45,7 +45,8 @@ class DocumentExportService {
   Future<File> exportDocx(DocumentModel document) async {
     final outFile = await _createExportFile(document.title, 'docx');
     final escaped = _escapeXml(document.plainText);
-    final documentXml = '''
+    final documentXml =
+        '''
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>

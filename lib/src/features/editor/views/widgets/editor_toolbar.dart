@@ -8,11 +8,7 @@ class EditorToolbar extends StatelessWidget {
   final EditorViewModel viewModel;
   final DocumentModel doc;
 
-  const EditorToolbar({
-    super.key,
-    required this.viewModel,
-    required this.doc,
-  });
+  const EditorToolbar({super.key, required this.viewModel, required this.doc});
 
   @override
   Widget build(BuildContext context) {

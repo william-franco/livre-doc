@@ -28,9 +28,7 @@ class _EditorViewState extends State<EditorView> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    _vm = GetIt.instance.get<EditorViewModel>(
-      param1: widget.initialFilePath,
-    );
+    _vm = GetIt.instance.get<EditorViewModel>(param1: widget.initialFilePath);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await _vm.initDocument();
     });

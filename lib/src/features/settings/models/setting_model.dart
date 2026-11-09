@@ -13,10 +13,9 @@ class SettingModel {
     bool? isDarkTheme,
     double? fontSize,
     String? fontFamily,
-  }) =>
-      SettingModel(
-        isDarkTheme: isDarkTheme ?? this.isDarkTheme,
-        fontSize: fontSize ?? this.fontSize,
-        fontFamily: fontFamily ?? this.fontFamily,
-      );
+  }) => SettingModel(
+    isDarkTheme: isDarkTheme ?? this.isDarkTheme,
+    fontSize: fontSize ?? this.fontSize,
+    fontFamily: fontFamily ?? this.fontFamily,
+  );
 }

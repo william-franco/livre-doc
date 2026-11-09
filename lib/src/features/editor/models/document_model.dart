@@ -26,13 +26,12 @@ class DocumentModel {
     bool? hasUnsavedChanges,
     double? fontSize,
     String? fontFamily,
-  }) =>
-      DocumentModel(
-        title: title ?? this.title,
-        contentDelta: contentDelta ?? this.contentDelta,
-        filePath: filePath ?? this.filePath,
-        hasUnsavedChanges: hasUnsavedChanges ?? this.hasUnsavedChanges,
-        fontSize: fontSize ?? this.fontSize,
-        fontFamily: fontFamily ?? this.fontFamily,
-      );
+  }) => DocumentModel(
+    title: title ?? this.title,
+    contentDelta: contentDelta ?? this.contentDelta,
+    filePath: filePath ?? this.filePath,
+    hasUnsavedChanges: hasUnsavedChanges ?? this.hasUnsavedChanges,
+    fontSize: fontSize ?? this.fontSize,
+    fontFamily: fontFamily ?? this.fontFamily,
+  );
 }

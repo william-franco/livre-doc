@@ -15,9 +15,7 @@ class PdfFontLoader {
     _regular = pw.Font.ttf(
       await rootBundle.load('assets/fonts/Roboto-Regular.ttf'),
     );
-    _bold = pw.Font.ttf(
-      await rootBundle.load('assets/fonts/Roboto-Bold.ttf'),
-    );
+    _bold = pw.Font.ttf(await rootBundle.load('assets/fonts/Roboto-Bold.ttf'));
     _italic = pw.Font.ttf(
       await rootBundle.load('assets/fonts/Roboto-Italic.ttf'),
     );

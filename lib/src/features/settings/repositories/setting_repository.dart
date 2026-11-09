@@ -1,8 +1,10 @@
 import 'package:livre_doc/src/common/constants/value_constant.dart';
 import 'package:livre_doc/src/common/services/storage_service.dart';
+import 'package:livre_doc/src/common/services/url_launcher_service.dart';
 import 'package:livre_doc/src/features/settings/models/setting_model.dart';
 
 abstract interface class SettingRepository {
+  Future<void> openUrl({required Uri url});
   Future<SettingModel> readSettings();
   Future<void> updateTheme({required bool isDarkTheme});
   Future<void> updateFontSize({required double fontSize});
@@ -12,7 +14,17 @@ abstract interface class SettingRepository {
 class SettingRepositoryImpl implements SettingRepository {
   final StorageService storageService;
 
-  SettingRepositoryImpl({required this.storageService});
+  final UrlLauncherService urlLauncherService;
+
+  SettingRepositoryImpl({
+    required this.storageService,
+    required this.urlLauncherService,
+  });
+
+  @override
+  Future<void> openUrl({required Uri url}) async {
+    await urlLauncherService.openUrl(url: url);
+  }
 
   @override
   Future<SettingModel> readSettings() async {
@@ -23,7 +35,8 @@ class SettingRepositoryImpl implements SettingRepository {
       final fontSizeRaw = await storageService.getStringValue(
         key: ValueConstant.editorFontSize,
       );
-      final fontFamily = await storageService.getStringValue(
+      final fontFamily =
+          await storageService.getStringValue(
             key: ValueConstant.editorFontFamily,
           ) ??
           'Roboto';

@@ -10,16 +10,16 @@ class RecentDocument {
   });
 
   Map<String, dynamic> toJson() => {
-        'filePath': filePath,
-        'title': title,
-        'lastOpened': lastOpened.toIso8601String(),
-      };
+    'filePath': filePath,
+    'title': title,
+    'lastOpened': lastOpened.toIso8601String(),
+  };
 
   factory RecentDocument.fromJson(Map<String, dynamic> json) => RecentDocument(
-        filePath: json['filePath'] as String,
-        title: json['title'] as String,
-        lastOpened: DateTime.parse(json['lastOpened'] as String),
-      );
+    filePath: json['filePath'] as String,
+    title: json['title'] as String,
+    lastOpened: DateTime.parse(json['lastOpened'] as String),
+  );
 
   RecentDocument copyWith({String? title, DateTime? lastOpened}) =>
       RecentDocument(

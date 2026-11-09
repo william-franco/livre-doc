@@ -56,7 +56,9 @@ class DocumentRepositoryImpl implements DocumentRepository {
   }
 
   @override
-  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document) async {
+  Future<ResultPattern<String, Exception>> saveDocument(
+    DocumentModel document,
+  ) async {
     try {
       final String path;
       if (document.filePath != null) {

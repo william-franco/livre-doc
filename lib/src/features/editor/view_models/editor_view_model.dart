@@ -48,10 +48,7 @@ class EditorViewModelImpl extends _EditorViewModel implements EditorViewModel {
   StreamSubscription<dynamic>? _changesSubscription;
   bool _isControllerReady = false;
 
-  EditorViewModelImpl({
-    required this.editorRepository,
-    this.initialFilePath,
-  }) {
+  EditorViewModelImpl({required this.editorRepository, this.initialFilePath}) {
     _editorFocusNode = FocusNode();
     _quillController = QuillController.basic();
   }

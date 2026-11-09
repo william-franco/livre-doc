@@ -38,8 +38,9 @@ class EditorRepositoryImpl implements EditorRepository {
       documentRepository.loadDocument(filePath: filePath);
 
   @override
-  Future<ResultPattern<String, Exception>> saveDocument(DocumentModel document) =>
-      documentRepository.saveDocument(document);
+  Future<ResultPattern<String, Exception>> saveDocument(
+    DocumentModel document,
+  ) => documentRepository.saveDocument(document);
 
   @override
   Future<void> shareDocument(DocumentModel document) =>
