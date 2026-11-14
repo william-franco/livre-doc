@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:livre_doc/src/common/dependency_injectors/dependency_injector.dart';
 import 'package:livre_doc/src/features/welcome/view_models/welcome_view_model.dart';

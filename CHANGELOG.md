@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented in this file.
 
+## 2026-11-14
+
+- Commit: Updated Dart SDK to ^3.14.0.
+  - Migrated Material imports to material_ui, upgraded dependencies to their latest major versions and adapted the file picker to the new API.
+
 ## 2026-11-07
 
 - Commit: Added url_launcher and a GitHub button to the About dialog.

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:livre_doc/src/common/patterns/state_pattern.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';

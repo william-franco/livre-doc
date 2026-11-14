@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:livre_doc/src/common/dependency_injectors/dependency_injector.dart';
 import 'package:livre_doc/src/common/design/app_theme.dart';
 import 'package:livre_doc/src/common/routes/routes.dart';

@@ -53,14 +53,13 @@ class WelcomeViewModelImpl extends _WelcomeViewModel
 
   @override
   Future<String?> pickDocumentFile() async {
-    final result = await FilePicker.platform.pickFiles(
+    final files = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['livre', 'txt', 'json'],
-      allowMultiple: false,
     );
 
-    if (result == null || result.files.isEmpty) return null;
-    return result.files.single.path;
+    if (files.isEmpty) return null;
+    return files.single.path;
   }
 
   void _emit(WelcomeState newState) {

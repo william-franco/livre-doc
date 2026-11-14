@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:livre_doc/src/common/design/app_theme.dart';
 import 'package:livre_doc/src/features/editor/models/document_model.dart';
 import 'package:livre_doc/src/features/editor/view_models/editor_view_model.dart';

@@ -25,7 +25,8 @@ flowchart LR
 
 | Technology | Version |
 |------------|---------|
-| Dart SDK | ^3.13.7 |
+| Dart SDK | ^3.14.0 |
+| material_ui | ^1.11.0 |
 | cupertino_icons | ^1.0.8 |
 | path | ^1.9.1 |
 | path_provider | ^2.1.5 |

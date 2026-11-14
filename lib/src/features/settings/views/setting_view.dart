@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:livre_doc/src/common/state_management/state_management.dart';
 import 'package:livre_doc/src/features/settings/models/setting_model.dart';
