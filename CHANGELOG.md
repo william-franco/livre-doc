@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented in this file.
 
+## 2026-11-22
+
+- Commit: Added web platform, integration tests, and Linux CI E2E.
+  - Recreated web host, integration_test, and CI Linux E2E step.
+
 ## 2026-11-14
 
 - Commit: Updated Dart SDK to ^3.14.0.
