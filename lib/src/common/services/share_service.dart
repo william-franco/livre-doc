@@ -13,7 +13,9 @@ class ShareServiceImpl implements ShareService {
   @override
   Future<void> shareText({required String text, String? subject}) async {
     try {
-      await Share.share(text, subject: subject);
+      await SharePlus.instance.share(
+        ShareParams(text: text, subject: subject),
+      );
     } on UnimplementedError {
       await Clipboard.setData(ClipboardData(text: text));
       debugPrint('[ShareService] Linux: text copied to clipboard.');
@@ -25,9 +27,13 @@ class ShareServiceImpl implements ShareService {
   @override
   Future<void> shareFile({required String filePath, String? mimeType}) async {
     try {
-      await Share.shareXFiles([
-        XFile(filePath, mimeType: mimeType ?? 'application/json'),
-      ]);
+      await SharePlus.instance.share(
+        ShareParams(
+          files: [
+            XFile(filePath, mimeType: mimeType ?? 'application/json'),
+          ],
+        ),
+      );
     } on UnimplementedError {
       try {
         final dir = File(filePath).parent.path;

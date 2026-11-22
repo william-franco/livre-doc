@@ -4,6 +4,9 @@ All notable changes to this project are documented in this file.
 
 ## 2026-11-22
 
+- Linux CI E2E runs under xvfb-run for headless GitHub Actions runners.
+- Migrated SharePlus sharing API (ShareParams) for Flutter analyze.
+
 - Commit: Added web platform, integration tests, and Linux CI E2E.
   - Recreated web host, integration_test, and CI Linux E2E step.
 
